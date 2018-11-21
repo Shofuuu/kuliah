@@ -6,17 +6,13 @@ void genap_ganjil(int _first, int _end, bool mode){
             if(_first%2==0)
                 std::cout<<_first<<" adalah GENAP"<<std::endl;
 
-            if(_first==_end)
-                std::cout<<"Selesai!\n";
-            else
+            if(_first!=_end)
                 genap_ganjil(_first+1,_end,1);
         }else{
             if(_first%2==0)
                 std::cout<<_first<<" adalah GENAP"<<std::endl;
 
-            if(_first==_end)
-                std::cout<<"Selesai!\n";
-            else
+            if(_first!=_end)
                 genap_ganjil(_first-1,_end,1);
         }
     }else{
@@ -24,17 +20,13 @@ void genap_ganjil(int _first, int _end, bool mode){
             if(_first%2!=0)
                 std::cout<<_first<<" adalah GANJIL"<<std::endl;
 
-            if(_first==_end)
-                std::cout<<"Selesai!\n";
-            else
+            if(_first!=_end)
                 genap_ganjil(_first+1,_end,0);
         }else{
             if(_first%2!=0)
                 std::cout<<_first<<" adalah GANJIL"<<std::endl;
 
-            if(_first==_end)
-                std::cout<<"Selesai!\n";
-            else
+            if(_first!=_end)
                 genap_ganjil(_first-1,_end,0);
         }
     }
