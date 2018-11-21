@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 int main(int argc, char* argv[]){
 	float s=0,p=0;
@@ -14,7 +13,6 @@ int main(int argc, char* argv[]){
         scanf("%f",&res[c]);
 
         if(res[c]<0) break;
-        else count++;
     }
 
     for(int range=0;range<count;range++){
