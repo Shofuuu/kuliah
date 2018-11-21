@@ -1,19 +1,16 @@
 #include <iostream>
 
 void genap_ganjil(int _first, int _end){
-    int temp=_first;
+    if(_first%2==0)
+        std::cout<<_first<<" adalah GENAP"<<std::endl;
+    else
+        std::cout<<_first<<" adalah GANJIL"<<std::endl;
 
-    if(x==0) std::cout<<"Selesai!\n";
-    else{
-        if(temp<=_end) temp++;
-        else{
-            if(temp%2==0)
-                std::cout<<temp<<" adalah Genap\n";
-            else
-                std::cout<<temp<<" adalah Ganjil\n";
-            genap_ganjil(_first,_end-1);
-        }
-    }
+    if(_first==_end)
+        std::cout<<"Selesai!\n";
+    else
+        genap_ganjil(_first+1,_end);
+
 }
 
 int main(void){
