@@ -4,7 +4,6 @@ int score[2][100];
 float average(int index){ return (2.0*score[0][index]*score[1][index])/(score[0][index]+score[1][index]); }
 
 int main(void){
-};
     int x=0;
 
     while(1){
