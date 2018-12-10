@@ -1,0 +1,14 @@
+#include <iostream>
+
+struct DATA{
+	char *str;
+};
+
+int main(){
+	DATA *Data;
+	char temp;
+
+	Data->str=&temp;
+	Data->str='\xDB';
+	std::cout<<temp<<std::endl;
+}
