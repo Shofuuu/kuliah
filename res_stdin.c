@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main(int argc, char* argv[]){
-	float s=0,p=0;
+    float s=0,p=0;
     float res[100];
     short count=0;
 
