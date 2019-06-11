@@ -35,9 +35,9 @@ void sort_str(char *_data[], int _len){
     char *tmp;
     int x,y;
 
-    for(x=1;x<_len;x++){
-        for(y=1;y<_len;y++){
-            if(strcmp(_data[y],&_data[x])>0){
+    for(x=1;x<_len-1;x++){
+        for(y=x+1;y<_len;y++){
+            if(strcmp(_data[x],_data[y])>0){
                 strcpy(&tmp,&_data[x]);
                 strcpy(&_data[x],&_data[y]);
                 strcpy(&_data[y],&tmp);
