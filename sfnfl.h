@@ -15,7 +15,7 @@ void help_msg(){
         {"-v","Enable verbose message"}
     };
 
-    std::cout<<"SFNFL file tool v0.0.1"<<std::endl;
+    std::cout<<"SFNFL file tool v0.0.3"<<std::endl;
     std::cout<<"Usage : sfnfl [option] [value] [...] [ifstream]"<<std::endl;
     std::cout<<"OPTIONS:"<<std::endl;
 
@@ -26,7 +26,7 @@ void help_msg(){
 
 class SFNFL{
 private:
-    std::string fl_name,f_out;
+    std::string fl_name,f_out,fl;
     std::string pre_txt,app_txt,con_txt;
     std::string rep_c[2];
     bool raw=false;
@@ -59,8 +59,6 @@ public:
 
 //PRIVATE
 std::string SFNFL::get_filter_name(void){
-    std::string fl;
-
     if(get_file_output_name()==""){
         if(raw==false) fl = fl_name+"_sfnfl";
         raw=true;
@@ -85,14 +83,16 @@ bool SFNFL::file_exist(void){
 void SFNFL::write_output(void){
     clock_t start = clock();
 
+    std::fstream read(fl_name.c_str(),std::ios::in);
+    std::ofstream write(get_filter_name().c_str());
+    std::string str("");
+
     if(get_verbose_status()==true){
         print_info(std::string("file : ")+fl_name);
         print_info(std::string("output : ")+get_filter_name());
     }
 
-    std::fstream read(fl_name.c_str(),std::ios::in);
-    std::ofstream write(get_filter_name().c_str());
-    std::string str("");
+    DEBUG(get_filter_name());
 
     while(std::getline(read,str)){
         if(get_verbose_status()==true)
