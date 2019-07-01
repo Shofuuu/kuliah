@@ -97,10 +97,11 @@ void SFNFL::write_output(void){
     while(std::getline(read,str)){
         if(get_verbose_status()==true)
             print_status(str);
-        if(str.find(get_replace_char(0))!=std::string::npos)
-            str=replace_all(str,get_replace_char(0),get_replace_char(1));
-        if(str.find(get_continue_text())!=std::string::npos)
-            continue;
+        if(get_replace_char(0)!="")
+            if(str.find(get_replace_char(0))!=std::string::npos)
+                str=replace_all(str,get_replace_char(0),get_replace_char(1));
+        if(get_continue_text()!="")
+            if(str.find(get_continue_text())!=std::string::npos) continue;
         if(get_skip_line_status()==true)
             if(str=="") continue;
         write<<get_prepend_text()<<str<<get_append_text()<<std::endl;

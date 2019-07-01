@@ -12,7 +12,7 @@ int main(int argc, char* argv[]){
 				fl.set_verbose_status(true);
 			else if(std::string(argv[scan])=="-fO")
 				fl.set_file_output_name(std::string(argv[scan+1]));
-			else if(std::string(argv[scan])=="-lC")
+			else if(std::string(argv[scan])=="-l0")
 				fl.set_skip_line_status(true);
 		}
 
