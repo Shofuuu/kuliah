@@ -9,10 +9,12 @@ namespace Loop{
                         Console.Write((x%15 == 0 ? ("") : (x + " ")));
                 x++;
             }
+            Console.WriteLine("\n");
 
             for(x=100;x>=0;x--)
                 if(x%11 == 0 || x%7 == 0)
                     Console.Write(x + " ");
+            Console.WriteLine();
         }
     }
 }
