@@ -2,10 +2,11 @@ using System;
 
 namespace Maxvalue{
     class Program{
+        static int counter = 0;
         static int[] parsingValue(string raw){ // convert string to array data
             int[] val = new int[100];
             string tmp = "";
-            int counter = 0;
+            counter = 0;
 
             raw = raw+=',';
             for(int x=0;x<raw.Length;x++){
@@ -36,6 +37,15 @@ namespace Maxvalue{
 
             return max;
         }
+        static int GetMin(int[] data){
+            int min = GetMax(data);
+
+            for(int x=0;x<counter;x++)
+                if(data[x] < min)
+                    min = data[x];
+
+            return min;
+        }
         static void Main(string[] args){
             string input;
 
@@ -44,6 +54,7 @@ namespace Maxvalue{
             input = Console.ReadLine();
             input = removeChar(input,' ');
             Console.WriteLine("Max Value : " + GetMax(parsingValue(input)));
+            Console.WriteLine("Min Value : " + GetMin(parsingValue(input)));
             Console.ReadKey();
         }
     }
