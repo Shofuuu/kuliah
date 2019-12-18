@@ -71,6 +71,9 @@ namespace Responsi_Antarmuka
             }
         }
 
+        // AGAR BISA AUTO UPDATE (SEHABIS KONEK DATA OTOMATIS DI BACA)
+        // AMBIL KOMPONEN "TIMER" ATUR INTERVAL KE 1000
+        // Pewaktu.Start() UNTUK MULAI
         private void Pewaktu_Tick(object sender, EventArgs e)
         {
             counter++;
